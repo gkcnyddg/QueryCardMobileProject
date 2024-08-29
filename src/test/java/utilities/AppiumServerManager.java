@@ -10,6 +10,7 @@ public class AppiumServerManager {
 
 	public static AppiumDriverLocalService service;
 
+
 	public static AppiumDriverLocalService getService () {
 		return service;
 	}
