@@ -38,3 +38,10 @@ build/
 .DS_Store
 
 .idea/
+
+### My Configuratins ###
+
+/configuration.properties
+querycart2006.apk
+
+########################
