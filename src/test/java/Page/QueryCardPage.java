@@ -39,11 +39,22 @@ public class QueryCardPage {
     private WebElement rememberMeCheckBox;
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.view.View\").instance(4)")
     private WebElement addWishListToast;
-
-
-
-
-
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Profile\")")
+    private WebElement profileIconBottomBar;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Sign Up\")")
+    private WebElement signUpButton;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"*Use Email Instead\")")
+    private WebElement useEmailInsteadButton;
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(0)")
+    private WebElement signUpName;
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(1)")
+    private WebElement signUpEmail;
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(2)")
+    private WebElement signUpPassword;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Sign Up\").instance(1)")
+    private WebElement accountCreateSignUpButton;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Success Register Successfully.\")")
+    private WebElement registerSuccessfully;
 
 
     public void LogoGorunurTest(){
