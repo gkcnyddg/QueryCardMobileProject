@@ -82,6 +82,61 @@ public class Stepdefinition extends OptionsMet {
 
     }
 
+    ////////////////////////////////////////// TC_01 <-> TC_02 BackGround //////////////////////////////////////////////
+
+    @Given("user opens the app")
+    public void user_opens_the_app() {
+
+
+
+    }
+    @Given("user ensures that profile icon is visible on the bottom bar")
+    public void user_ensures_that_profile_icon_is_visible_on_the_bottom_bar() {
+
+
+
+    }
+    @Given("user clicks on the profile icon")
+    public void user_clicks_on_the_profile_icon() {
+
+
+
+    }
+    @Given("user clicks on signup button")
+    public void user_clicks_on_signup_button() {
+
+
+
+    }
+
+    /////////////////////////////////////// US_07 -> TC_01 + TC_02 /////////////////////////////////////////////////////
+
+    @Given("user clicks on use email instead button")
+    public void user_clicks_on_use_email_instead_button() {
+
+
+
+    }
+    @Given("{string} {string} and {string} values are entered to the related fields")
+    public void and_values_are_entered_to_the_related_fields(String string, String string2, String string3) {
+
+
+
+    }
+    @Given("user clicks on sign up button")
+    public void user_clicks_on_sign_up_button() {
+
+
+
+    }
+    @Given("user is directed to SignIn page")
+    public void user_is_directed_to_sign_ın_page() {
+
+
+
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 }
 
