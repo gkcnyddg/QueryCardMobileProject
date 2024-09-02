@@ -90,24 +90,29 @@ public class Stepdefinition extends OptionsMet {
 
         //The app is opened automatically
 
+        ReusableMethods.wait(2);
+
     }
     @Given("user ensures that profile icon is visible on the bottom bar")
     public void user_ensures_that_profile_icon_is_visible_on_the_bottom_bar() {
 
         //user asserts that profile icon is visible
         Assert.assertTrue(card.getProfileIconBottomBar().isDisplayed());
+        ReusableMethods.wait(2);
 
     }
     @Given("user clicks on the profile icon")
     public void user_clicks_on_the_profile_icon() {
 
         card.getProfileIconBottomBar().click();
+        ReusableMethods.wait(2);
 
     }
     @Given("user clicks on signup button")
     public void user_clicks_on_signup_button() {
 
         card.getSignUpButton().click();
+        ReusableMethods.wait(2);
 
     }
 
@@ -117,17 +122,19 @@ public class Stepdefinition extends OptionsMet {
     public void user_clicks_on_use_email_instead_button() {
 
         card.getUseEmailInsteadButton().click();
+        ReusableMethods.wait(2);
 
     }
     @Given("{string} Email and {string} values are entered to the related fields")
-    public void and_values_are_entered_to_the_related_fields(String Name, String Password) {
+    public void and_values_are_entered_to_the_related_fields(String Name, String password) {
 
         card.getSignUpName().click();
         card.getSignUpName().sendKeys(ConfigReader.getProperty(Name));
         actions.sendKeys(Keys.TAB).perform();
         card.getSignUpEmail().sendKeys(ConfigReader.getProperty("Email"));
         actions.sendKeys(Keys.TAB).perform();
-        card.getSignUpPassword().sendKeys(ConfigReader.getProperty(Password));
+        card.getSignUpPassword().sendKeys(ConfigReader.getProperty(password));
+        ReusableMethods.wait(2);
 
     }
 
@@ -137,9 +144,11 @@ public class Stepdefinition extends OptionsMet {
         card.getSignUpName().click();
         card.getSignUpName().sendKeys(ConfigReader.getProperty("Name"));
         actions.sendKeys(Keys.TAB).perform();
-        card.getSignUpEmail().sendKeys(ConfigReader.getProperty("phoneNumber"));
         actions.sendKeys(Keys.TAB).perform();
-        card.getSignUpPassword().sendKeys(ConfigReader.getProperty("Password"));
+        card.getSignUpEmail().sendKeys(ConfigReader.getProperty("phoneNumber2"));
+        actions.sendKeys(Keys.TAB).perform();
+        card.getSignUpPassword().sendKeys(ConfigReader.getProperty("password"));
+        ReusableMethods.wait(2);
 
     }
 
@@ -147,12 +156,14 @@ public class Stepdefinition extends OptionsMet {
     public void user_clicks_on_sign_up_button() {
 
         card.getAccountCreateSignUpButton().click();
+        ReusableMethods.wait(2);
 
     }
     @Given("user is directed to SignIn page")
     public void user_is_directed_to_sign_ın_page() {
 
         Assert.assertTrue(card.getRegisterSuccessfully().isDisplayed());
+        ReusableMethods.wait(2);
 
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
