@@ -16,12 +16,11 @@ import static org.junit.Assert.assertTrue;
 public class PaymentPage {
 
     public PaymentPage(){
-        //PageFactory.initElements(new AppiumFieldDecorator(getAppiumDriver()),this);
+
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getDriver()),this);
 
-
     }
-    Actions actions=new Actions(Driver.getDriver());
+
     @AndroidFindBy(accessibility = "Profile")
     public WebElement profileLink;
     @AndroidFindBy(accessibility = "Sign In")
