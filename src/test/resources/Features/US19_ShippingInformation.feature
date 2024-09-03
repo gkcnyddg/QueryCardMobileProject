@@ -1,7 +1,7 @@
 Feature: Kayıtlı bir kullanıcı olarak sitede odemeyi tamamlamadan önce adres bilgilerimi secip yonetebilecegim bir sayfa olmasını istiyorum
 
 
-  @19
+
 
   Scenario: Shipping Information sayfasındaki “Delivery” ve “Pick Up” butonlarının görünürlüğü ve aktifliğinin testi.  -  TC 1
 
@@ -18,3 +18,7 @@ Feature: Kayıtlı bir kullanıcı olarak sitede odemeyi tamamlamadan önce adre
 
     * Ziyaretçi kullanıcı girişi yapar.
     * Kullanıcı istediği ürünleri sepetine ekler ve Shipping Information sayfasına ulaşır.
+    * Kullanıcı Add butonuna tıklar.
+    * Kullanıcı ilgili Textboxları doldurur ve seçimleri yapar.
+    * Kullanıcı Add Address Butonuna tıklar.
+    * Kullanıcı Shipping Information sayfasında oluşturduğu Address’i görüntüler.
