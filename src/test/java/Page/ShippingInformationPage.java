@@ -70,9 +70,75 @@ public class ShippingInformationPage {
     public WebElement ShipInfPickUpMEA;
 
 
+
     // US 19 - TC1 - STEP 4
 
     @AndroidFindBy(accessibility = "Delivery") // Shipping Information Page >"Delivery"< Button
     public WebElement ShipInfDeliveryMEA;
+
+
+
+
+    // US 19 - TC2 - STEP 3
+
+    @AndroidFindBy(accessibility = "Add") // Shipping Information Page >"Add"< Button
+    public WebElement ShipInfAddMEA;
+
+
+    // US 19 - TC2 - STEP 4
+
+
+    // NOT !! Alttaki 5 adet locate klavye acıldıgında veya bir tanesi ekranda göründüğünde indexi değişmektedir.
+    @AndroidFindBy(xpath = "(//*[@class=\"android.widget.EditText\"])[1]") // Shipping Information Page > Add > "Full Name" Textbox
+    public WebElement NewAdressFullNameMEA;
+
+    @AndroidFindBy(xpath = "(//*[@class=\"android.widget.EditText\"])[2]") // Shipping Information Page > Add > "Email" Textbox
+    public WebElement NewAdressEmailMEA;
+
+    @AndroidFindBy(xpath = "(//*[@class=\"android.widget.EditText\"])[3]") // Shipping Information Page > Add > "Phone" Textbox
+    public WebElement NewAdressPhoneMEA;
+
+    @AndroidFindBy(xpath = "(//*[@class=\"android.widget.EditText\"])[4]") // Shipping Information Page > Add > "Zip Code" Textbox
+    public WebElement NewAdressZipCodeMEA;
+
+    @AndroidFindBy(xpath = "(//*[@class=\"android.widget.EditText\"])[4]") // Shipping Information Page > Add > "Street Adress" Textbox
+    public WebElement NewAdressStreetAdressMEA;                            // !!! tüm ekran göründüğünde indexi 5 olması gerekiyor !!!
+
+
+
+    @AndroidFindBy(accessibility = "Country") // Shipping Information Page > Add > "Country" Seçim kartı
+    public WebElement NewAdressCountryMEA;
+
+    @AndroidFindBy(accessibility = "State") // Shipping Information Page > Add > "State" Seçim kartı
+    public WebElement NewAdressStateMEA;
+
+    @AndroidFindBy(accessibility = "City") // Shipping Information Page > Add > "City" Seçim kartı
+    public WebElement NewAdressCityMEA;
+
+
+
+    @AndroidFindBy(className = "android.widget.EditText") // Shipping Information Page > Add > Country-State-City içerisindeki "Arama Text Box"
+    public WebElement NewAdressAramaTextBoxMEA;
+
+
+
+    @AndroidFindBy(xpath = "(//*[@index=\"0\"])[13]") // Shipping Information Page > Add > Country-State-City içerisindeki bulunan ilk seçenek
+    public WebElement NewAdressCSCilkMEA;
+
+
+    // US 19 - TC2 - STEP 5
+
+    @AndroidFindBy(accessibility = "Add Address") // Shipping Information Page > Add > "Add Address" Button
+    public WebElement NewAdressAddAdressButtonMEA;
+
+    // US 19 - TC2 - STEP 6
+
+    @AndroidFindBy(xpath = "(//*[@class=\"android.widget.ImageView\"])[4]") // Shipping Information Page > İlk Adress Kartı
+    public WebElement NewAdressIlkAdresKartiMEA;
+
+
+
+
+
 
 }
