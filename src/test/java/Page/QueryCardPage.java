@@ -46,6 +46,33 @@ public class QueryCardPage {
 
 
 
+
+    @AndroidFindBy( xpath="//android.widget.ImageView[@content-desc=\"Category\"]")
+            public WebElement categoryikon;
+
+
+    @AndroidFindBy( xpath="//android.view.View[@content-desc=\"Men\"]")
+    public WebElement categoryMen;
+
+    @AndroidFindBy( xpath="//android.view.View[@content-desc=\"Women\"]")
+    public WebElement categorWomen;
+
+    @AndroidFindBy( xpath="//android.view.View[@content-desc=\"Juniors\"]")
+    public WebElement categoryJuniors;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void LogoGorunurTest(){
 
             try {
