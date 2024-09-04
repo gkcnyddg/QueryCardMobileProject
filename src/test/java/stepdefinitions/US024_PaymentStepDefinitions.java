@@ -43,7 +43,7 @@ public class US024_PaymentStepDefinitions {
     }
     @Given("Verify that the card information form is displayed.")
     public void verify_that_the_card_information_form_is_displayed() {
-
+    ReusableMethods.wait(2);
     Assert.assertTrue(paymentPage.backToPaymentLink.isDisplayed());
     Assert.assertTrue(paymentPage.confirmButton.isDisplayed());
     }
@@ -60,6 +60,7 @@ public class US024_PaymentStepDefinitions {
     public void fill_in_the_card_information_form_with_invalid_details(String cardNo, String expiryDate, String cvv, String zip) {
 
     paymentPage.stripePaymentPerformNegative(cardNo,expiryDate,cvv,zip);
+    ReusableMethods.wait(5);
     Assert.assertTrue(paymentPage.cardErrorText.isDisplayed());
 
     }

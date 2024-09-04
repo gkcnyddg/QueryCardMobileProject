@@ -137,7 +137,6 @@ public class PaymentPage {
         ReusableMethods.ekranKaydirmaMethodu(815,1524,5,815,1203);
         addToCartButton.click();
         Assert.assertTrue(addToCartSuccessText.isDisplayed());
-        ReusableMethods.wait(2);
         cartIcon.click();
         proceedToCheckoutButton.click();
         addressBox.click();
@@ -168,12 +167,16 @@ public class PaymentPage {
 
         cardNo.click();
         cardNo.sendKeys(cartNo);
+        ReusableMethods.wait(1);
         dateCart.click();
         dateCart.sendKeys(expiryDate);
+        ReusableMethods.wait(1);
         cvcCart.click();
         cvcCart.sendKeys(cvv);
+        ReusableMethods.wait(1);
         zipCart.click();
         zipCart.sendKeys(zip);
+        ReusableMethods.wait(1);
         confirmButton.click();
 
     }

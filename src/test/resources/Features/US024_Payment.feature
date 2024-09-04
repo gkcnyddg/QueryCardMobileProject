@@ -1,4 +1,4 @@
-
+@gokcen
 Feature:As a registered user, I want to have a payment page where I can pay for my orders that I control.
   Background:
     * User makes driver adjustments
@@ -31,7 +31,7 @@ Feature:As a registered user, I want to have a payment page where I can pay for 
       | cardNo               | expiryDate | CVV  | Zip      |
       |424242424242424       | 1229       | 345  | 56789    |
       |4242424242424242      | 1220       | 345  | 56789    |
-      |4242424242424242      | 1229       | 3    | 56789    |
+      |4242424242424242      | 1229       | 399999    | 56789    |
       |4242424242424242      | 1229       | 345  | 5        |
 
   Scenario: [US024->TC006]Stripe Payment Method Shopping Resumption
