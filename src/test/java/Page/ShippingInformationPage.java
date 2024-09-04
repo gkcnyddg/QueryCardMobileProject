@@ -16,7 +16,7 @@ public class ShippingInformationPage {
 
 
 
-    // US 19 - TC 1  - STEP 1
+    // US 19 - TC 1-2-3-4-5-6  - STEP 1
 
     @AndroidFindBy(accessibility = "Profile") // Alt Bardaki Profil butonu
     public WebElement AltBarProfileMEA;
@@ -39,7 +39,7 @@ public class ShippingInformationPage {
 
 
 
-    // US 19 - TC 2 - STEP 2
+    // US 19 - TC 1-2-3-4-5-6 - STEP 2
 
     @AndroidFindBy(accessibility = "Category") // Alt Bardaki Category butonu
     public WebElement AltBarCategoryMEA;
@@ -127,18 +127,67 @@ public class ShippingInformationPage {
 
 
     // US 19 - TC2 - STEP 5
-
     @AndroidFindBy(accessibility = "Add Address") // Shipping Information Page > Add > "Add Address" Button
     public WebElement NewAdressAddAdressButtonMEA;
 
-    // US 19 - TC2 - STEP 6
 
+    // US 19 - TC2 - STEP 6
     @AndroidFindBy(xpath = "(//*[@class=\"android.widget.ImageView\"])[4]") // Shipping Information Page > İlk Adress Kartı
     public WebElement NewAdressIlkAdresKartiMEA;
 
 
 
 
+    // US 19 - TC3 - STEP 3
+    @AndroidFindBy(accessibility = "Edit") // Shipping Information Page > "Edit" Button
+    public WebElement ShipInfEditMEA;
 
+    @AndroidFindBy(accessibility = "Address") // Shipping Information Page > Edit > "Address" Başlığı
+    public WebElement ShipInfEditAdresBaslikMEA;
+
+
+
+    // US 19 - TC3 - STEP 4
+    @AndroidFindBy(xpath = "(//*[@index=\"0\"])[15]") // Shipping Information Page > Edit > ilk Adres kartı üzerindeki Yeşil Yuvarlak
+    public WebElement ShipInfEditYesilYuvarlakMEA;
+
+
+
+    // US 19 - TC4 - STEP 4
+    @AndroidFindBy(xpath = "(//*[@index=\"1\"])[3]") // Shipping Information Page > Edit > ilk Adres kartı üzerindeki Kırmızı Yuvarlak
+    public WebElement ShipInfEditKirmiziYuvarlakMEA;
+
+
+    // US 19 - TC4 - STEP 5
+    @AndroidFindBy(accessibility = "Are you sure you want to delete?") // Shipping Information Page > Edit > Kırmızı Yuvarlak Tıklandıktan sonraki sayfa "Are you sure you want to delete?" başlığı
+    public WebElement ShipInfEditDeleteSureYaziMEA;
+
+    @AndroidFindBy(accessibility = "Delete") // Shipping Information Page > Edit > Kırmızı Yuvarlak Tıklandıktan sonraki sayfada "Delete" Button
+    public WebElement ShipInfEditKirmiziYuvarlakDeleteButtonMEA;
+
+
+
+    // US 19 - TC5 - STEP 3
+    @AndroidFindBy(accessibility = "Order Summary") // Shipping Information Page > "Order Summary" Başlığı
+    public WebElement ShipInfOrderSummaryMEA;
+    @AndroidFindBy(accessibility = "Subtotal") // Shipping Information Page > Order Summary Altındaki "Subtotal"
+    public WebElement ShipInfSubtotalMEA;
+    @AndroidFindBy(accessibility = "Tax") // Shipping Information Page > Order Summary Altındaki "Tax"
+    public WebElement ShipInfTaxMEA;
+    @AndroidFindBy(accessibility = "Shipping Charge") // Shipping Information Page > Order Summary Altındaki "Shipping Charge"
+    public WebElement ShipInfShippingChargeMEA;
+    @AndroidFindBy(accessibility = "Discount") // Shipping Information Page > Order Summary Altındaki "Discount"
+    public WebElement ShipInfDiscountMEA;
+    @AndroidFindBy(accessibility = "Total") // Shipping Information Page > Order Summary Altındaki "Total"
+    public WebElement ShipInfTotalMEA;
+
+
+    // US 19 - TC6 - STEP 3
+    @AndroidFindBy(xpath = "(//*[@class=\"android.widget.ImageView\"])[4]") // Shipping Information Page > İlk adresin kartı
+    public WebElement ShipInfIlkAdresKartiMEA;
+
+    // US 19 - TC6 - STEP 4
+    @AndroidFindBy(accessibility = "Save & Pay") // Shipping Information Page > "Save & Pay" Button
+    public WebElement ShipInfSaveAndPayMEA;
 
 }
