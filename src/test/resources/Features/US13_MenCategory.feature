@@ -3,7 +3,7 @@ Feature:
     * Click on the "Profile" section at the bottom right
     * Clicks the "Sign In" button
     * Clicks on "Use email instead" text
-    * Enters "Email" and "Password" information
+    * Enters "damra.manager@querycart.com" and "Query.2006" information
     * Clicks the "Sign In" button.
 
 
