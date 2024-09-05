@@ -45,19 +45,42 @@ public class HomepageProductsPage {
     @AndroidFindBy(xpath = "(//*[@class='android.view.View'])[29]")
     private WebElement productInformation;
 
+    //-------------------Logout Test--------------------
+    @AndroidFindBy(accessibility = "Profile")
+    public WebElement profileLink;
+    @AndroidFindBy(accessibility = "Sign In")
+    public WebElement signInButton;
+    @AndroidFindBy(accessibility = "*Use Email Instead")
+    public WebElement useMailInsteadLink;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]")
+    public WebElement emailBox;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[2]")
+    public WebElement passwordBox;
+    @AndroidFindBy(xpath = "(//android.view.View[@content-desc=\"Sign In\"])[2]")
+    public WebElement signInButton2;
 
-    public static void scrollWithUiScrollable(String elementText) {
-        AndroidDriver driver = (AndroidDriver) Driver.getDriver();
-        driver.findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textMatches(\""
-                        + elementText + "\").instance(0))"));
-    }
+
 
 
     String homePageFirstProductText;
     String relevantProductPageProductTexti;
 
+    String email= "bilal.user@querycart.com";
+    String password = "Query.2006";
 
+
+    public void loginTest(){
+        OptionsMet.clickButtonByDescription("Profile");
+        ReusableMethods.wait(1);
+        OptionsMet.clickButtonByDescription("Sign In");
+        ReusableMethods.wait(1);
+        OptionsMet.clickButtonByDescription("*Use Email Instead");
+        ReusableMethods.wait(1);
+        OptionsMet.clickAndSendKeys(emailBox, email);
+        OptionsMet.clickAndSendKeys(passwordBox, password);
+        signInButton2.click();
+        ReusableMethods.wait(1);
+    }
 
     public void homePageFirstProductIsVisibleAndClickableTest(){
         ReusableMethods.wait(3);
@@ -88,15 +111,7 @@ public class HomepageProductsPage {
         assertTrue(getReviewButton().isEnabled());
         assertTrue(getShippingReturnButton().isEnabled());
     }
-    public void clickTheDetailsButton(){
 
-        try {
-            OptionsMet.swipe(508,1761,508,527);
-        } catch (InvalidMidiDataException e) {
-            e.printStackTrace();
-        }
-        detailsButton.click();
-    }
     public void elementIsVisibleByDescription(String description) {
         //AndroidDriver driver = (AndroidDriver) getAppiumDriver();
         AndroidDriver driver = (AndroidDriver) Driver.getDriver();
@@ -104,11 +119,31 @@ public class HomepageProductsPage {
                 "new UiSelector().description(\"" + description + "\")"));
        assertTrue(element.isDisplayed());
     }
+    public void elementIsVisibleAndActiveByDescription(String description) {
+        //AndroidDriver driver = (AndroidDriver) getAppiumDriver();
+        AndroidDriver driver = (AndroidDriver) Driver.getDriver();
+        WebElement element = driver.findElement(MobileBy.AndroidUIAutomator(
+                "new UiSelector().description(\"" + description + "\")"));
+        assertTrue(element.isDisplayed());
+        assertTrue(element.isEnabled());
+    }
     public void productDetailsTitleAndInformationIsVisible(){
 
         assertTrue(productDetailsTitle.isDisplayed());
         assertTrue(productInformation.isDisplayed());
 
+    }
+
+    public WebElement getEmailBox() {
+        return emailBox;
+    }
+
+    public WebElement getPasswordBox() {
+        return passwordBox;
+    }
+
+    public WebElement getSignInButton2() {
+        return signInButton2;
     }
 
     public WebElement getProductDetailsTitle() {

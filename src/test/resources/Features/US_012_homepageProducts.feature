@@ -33,7 +33,7 @@ Feature: As a user, I want to be able to access detailed information about the p
     * It is verified that "Product Reviews" title is displayed,bilal.
     * It is verified that "reviews of the product" is displayed,bilal.
 
-  @ba
+
   Scenario: TC_06  When the Shipping&Return button is clicked, the Shipping&Return heading and the shipping and return conditions of the product should be displayed
 
     * Click the "Shipping & Return" button,bilal.
