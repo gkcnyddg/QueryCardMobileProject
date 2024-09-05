@@ -99,3 +99,4 @@ public class RegisterPage {
         assertTrue(addWishListToast.isEnabled());
     }
 }
+
