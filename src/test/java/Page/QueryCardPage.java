@@ -34,7 +34,7 @@ public class QueryCardPage {
     @AndroidFindBy(accessibility = "See All")
     private WebElement seeAllIconElement;
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(1)")
-    private WebElement passwordTextBox;
+    public WebElement passwordTextBox;
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.ImageView\").instance(2)")
     private WebElement rememberMeCheckBox;
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.view.View\").instance(4)")
