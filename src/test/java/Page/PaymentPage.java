@@ -1,5 +1,6 @@
 package Page;
 
+import com.github.javafaker.Faker;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.junit.Assert;
@@ -14,7 +15,7 @@ import utilities.ReusableMethods;
 import static org.junit.Assert.assertTrue;
 
 public class PaymentPage {
-
+    Faker faker=new Faker();
     public PaymentPage(){
 
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getDriver()),this);
@@ -25,6 +26,8 @@ public class PaymentPage {
     public WebElement profileLink;
     @AndroidFindBy(accessibility = "Sign In")
     public WebElement signInButton;
+    @AndroidFindBy(accessibility = "Sign Up")
+    public WebElement signUpButton;
     @AndroidFindBy(accessibility = "*Use Email Instead")
     public WebElement useMailInsteadLink;
     @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]")
@@ -47,6 +50,15 @@ public class PaymentPage {
     public WebElement proceedToCheckoutButton;
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"gokcen yedidag\n+12016505551212\ngokcen.user@querycart.com\nBatikent,AnkaraProvince,Turkey,06540\nabc mah\"]")
     public WebElement addressBox;
+
+    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Alex\n+12011234567890\nalex@alex.com\nManhattan,New York,UnitedStates,12345\nTime Square\"]")
+    public WebElement address1Box;
+    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Alex\n" +
+            "+12011234567890\n" +
+            "alex@alex.com\n" +
+            "Manhattan,NewYork,UnitedStates,12345\n" +
+            "Time Square\"]") public WebElement address2Box;
+
     @AndroidFindBy(accessibility = "Save & Pay")
     public WebElement saveAndPayButton;
     @AndroidFindBy(accessibility = "Payment Information")
@@ -59,7 +71,7 @@ public class PaymentPage {
     public WebElement cashOnDeliveryButton;
     @AndroidFindBy(accessibility = "Credit")
     public WebElement creditButton;
-    @AndroidFindBy(accessibility = "Confirm Order")
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Confirm Order\"]")
     public WebElement confirmOrderButton;
     @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"Back to Payment\"]")
     public WebElement backToPaymentLink;
@@ -102,6 +114,16 @@ public class PaymentPage {
     Your postal code is incomplete.
      */
     @AndroidFindBy(accessibility = "Home")public WebElement homePageSymbol;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]")
+    public WebElement signUpNameBox;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[2]")
+    public WebElement signUpEmailBox;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[3]")
+    public WebElement signUpPasswordBox;
+    @AndroidFindBy(xpath = "(//android.view.View[@content-desc=\"Sign Up\"])[2]")
+    public WebElement signUp2Box;
+
+
 
 
 
@@ -133,32 +155,44 @@ public class PaymentPage {
     }
     public void addTocart(){
         floralTshirtLink.click();
+        ReusableMethods.wait(2);
         mediumSizeLink.click();
         ReusableMethods.ekranKaydirmaMethodu(815,1524,5,815,1203);
         addToCartButton.click();
         Assert.assertTrue(addToCartSuccessText.isDisplayed());
+        ReusableMethods.wait(2);
         cartIcon.click();
+        ReusableMethods.wait(2);
         proceedToCheckoutButton.click();
+        ReusableMethods.wait(2);
         addressBox.click();
+        ReusableMethods.wait(2);
         ReusableMethods.ekranKaydirmaMethodu(889,1763,5,889,1375);
+        ReusableMethods.wait(2);
         saveAndPayButton.click();
+        ReusableMethods.wait(2);
 
 
 
     }
 
 
-    public void stripePaymentPerform(){
-
+        public void stripePaymentPerform(){
+        ReusableMethods.wait(5);
         cardNo.click();
         cardNo.sendKeys(ConfigReader.getProperty("cardNo"));
+            ReusableMethods.wait(2);
         dateCart.click();
         dateCart.sendKeys(ConfigReader.getProperty("expiryDate"));
+            ReusableMethods.wait(2);
         cvcCart.click();
         cvcCart.sendKeys(ConfigReader.getProperty("CVC"));
+            ReusableMethods.wait(2);
         zipCart.click();
         zipCart.sendKeys(ConfigReader.getProperty("zip"));
+            ReusableMethods.wait(2);
         confirmButton.click();
+            ReusableMethods.wait(2);
 
 
     }
@@ -180,13 +214,33 @@ public class PaymentPage {
         confirmButton.click();
 
     }
+    public  void registerAndLogin () {
+        profileLink.click();
+        signUpButton.click();
+        signUpNameBox.click();
+        String nameSurname = faker.name().fullName();
+        String email = faker.internet().emailAddress();
+        String password = "123456Gk*";
+
+        signUpNameBox.sendKeys(nameSurname);
+        useMailInsteadLink.click();
+        signUpEmailBox.click();
+        signUpEmailBox.sendKeys(email);
+        ReusableMethods.wait(2);
+        signUpPasswordBox.click();
+        signUpPasswordBox.sendKeys(password);
+        ReusableMethods.wait(2);
+        signUp2Box.click();
+        ReusableMethods.wait(2);
+        emailBox.click();
+        emailBox.sendKeys(email);
+        passwordBox.click();
+        passwordBox.sendKeys(password);
+        ReusableMethods.wait(1);
+        signInButton2.click();
 
 
-
-
-
-
-
+    }
 
 
 }
