@@ -33,7 +33,7 @@ public class US19_ShippingInformationStepDefinitions {
         ShipInfPage.AltBarCategoryMEA.click();
         ShipInfPage.CategoryJuniorsMEA.click();
         ShipInfPage.JuniorsMickyMouseMEA.click();
-        Thread.sleep(20000);
+        ReusableMethods.wait(8);
         ShipInfPage.UrunColourBlueMEA.click();
         ReusableMethods.ekranKaydirmaMethodu(549,1713,1,541,745);
         ShipInfPage.UrunPageAddToCartMEA.click();
@@ -46,6 +46,7 @@ public class US19_ShippingInformationStepDefinitions {
 
         ShipInfPage.ShipInfPickUpMEA.isDisplayed();
         ShipInfPage.ShipInfPickUpMEA.click();
+        ReusableMethods.wait(3);
     }
 
     @Given("Kullanıcı Delivery Butonunu görüntüler ve tıklar.")
